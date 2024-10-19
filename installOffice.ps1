@@ -1,17 +1,19 @@
 # Define nova URL para baixar a Ferramenta de Implantação do Office
-#@Todo verificar se link e valido
 $officeDeploymentToolUrl = "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_17830-20162.exe"
-$downloadPath = "$env:TEMP\officedeploymenttool.exe"
-$configXmlPath = "$env:TEMP\configuration.xml"
 
-# Baixar a Ferramenta de Implantação do Office
+$response = Invoke-WebRequest -Uri $officeDeploymentToolUrl -Method head -UseBasicParsing
+if (not ($response.StatusCode = = 200)) {
+  Write-Host "Link para office Deployment Tool invalido"
+  exit
+}
+
 Write-Host "Baixando a Ferramenta de Implantação do Office..."
 Invoke-WebRequest -Uri $officeDeploymentToolUrl -OutFile $downloadPath
 
 # Verificar se o download foi bem-sucedido
 if (-Not (Test-Path $downloadPath)) {
-    Write-Host "Erro: O arquivo de download não foi encontrado. Verifique o link."
-    exit
+  Write-Host "Erro: O arquivo de download não foi encontrado. Verifique o link."
+  exit
 }
 
 # Executar o instalador da Ferramenta de Implantação do Office
@@ -21,8 +23,8 @@ Start-Process -FilePath $downloadPath -ArgumentList "/quiet", "/extract:$env:TEM
 # Verificar se o executável de instalação foi extraído corretamente
 $odtExecutable = "$env:TEMP\setup.exe"
 if (-Not (Test-Path $odtExecutable)) {
-    Write-Host "Erro: O executável de instalação não foi encontrado após extração."
-    exit
+  Write-Host "Erro: O executável de instalação não foi encontrado após extração."
+  exit
 }
 
 # Criando o arquivo de configuração XML para a instalação do Office LTSC Professional Plus 2021
