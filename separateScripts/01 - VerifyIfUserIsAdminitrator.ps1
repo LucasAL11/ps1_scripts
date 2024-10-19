@@ -3,4 +3,4 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-Write-Host "administrador" -ForegroundColor Green
+Write-Host "Usuario é administrador" -ForegroundColor Green
