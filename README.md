@@ -1,26 +1,26 @@
 # Windows Setup Automation Script
 
-Este repositório contém um script PowerShell para automatizar a instalação de atualizações, aplicativos essenciais e drivers (Intel/NVIDIA). Ele também gerencia a instalação do Office LTSC Professional Plus 2021 e detecta a presença de GPU dedicada para sugerir softwares de jogos.
+This repository contains a PowerShell script to automate the installation of updates, essential apps, and drivers (Intel/NVIDIA). It also handles the installation of Office LTSC Professional Plus 2021 and detects dedicated GPUs to suggest gaming software.
 
-## 📋 Recursos
-- Verifica se o script está sendo executado como administrador.
-- Instala e atualiza o **winget** e **PSWindowsUpdate**.
-- Automatiza a instalação de drivers Intel e NVIDIA.
-- Detecta GPU dedicada para sugerir a instalação de aplicativos de jogos.
-- Permite instalação opcional de aplicativos de desenvolvimento.
-- Instalação do **Office LTSC Professional Plus 2021** com configuração personalizada.
+## 📋 Features
+- Verifies if the script is running as **administrator**.
+- Installs and updates **winget** and **PSWindowsUpdate**.
+- Automates Intel and NVIDIA driver installation.
+- Detects dedicated GPU to suggest gaming apps.
+- Allows optional installation of development tools.
+- Installs **Office LTSC Professional Plus 2021** with custom configuration.
 
-## 🛠️ Requisitos
-- **Windows 10** ou **Windows 11**.
-- Permissões de administrador.
-- Conexão com a internet.
+## 🛠️ Requirements
+- **Windows 10** or **Windows 11**.
+- Administrator privileges.
+- Internet connection.
 
-## 🚀 Como Usar
-1. **Executar como Administrador:**  
-   Abra o PowerShell como administrador antes de executar o script.
+## 🚀 How to Use
+1. **Run as Administrator:**  
+   Open PowerShell as administrator before executing the script.
 
-2. **Executando o Script:**  
-   Clone o repositório e execute o script no PowerShell:
+2. **Running the Script:**  
+   Clone the repository and run the script in PowerShell:
 
    ```powershell
    .\setup-script.ps1
